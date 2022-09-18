@@ -113,16 +113,30 @@ function calculo() {
       }
     }
 
-    output = '<table class="output" cellspacing="1" cellpadding="3"><tr>';
-    for (i = 0; i <= 17; i++) {
-      output += '<td class="tbl_heading">' + nombre_tipo[i] + "</td>";
-    }
-    output += "</tr><tr>";
+    // output = '<table class="output" cellspacing="1" cellpadding="3"><tr>';
+    // for (i = 0; i <= 17; i++) {
+    //   output += '<td class="tbl_heading">' + nombre_tipo[i] + "</td>";
+    // }
+    // output += "</tr><tr>";
+    // for (i = 0; i <= 17; i++) {
+    //   output +=
+    //     '<td class="' + color[i] + ' numero">x' + resultado[i] + "</td>";
+    // }
+    // output += "</tr></table>";
+    output = '<div class="tabla">';
     for (i = 0; i <= 17; i++) {
       output +=
-        '<td class="' + color[i] + ' numero">x' + resultado[i] + "</td>";
+        "<div class='total'><div class='tipe'><h5>" +
+        nombre_tipo[i] +
+        "</h5></div>";
+      output +=
+        '<div class="dano"><h5 class="' +
+        color[i] +
+        ' numero">x' +
+        resultado[i] +
+        "</h5></div></div>";
     }
-    output += "</tr></table>";
+    output += "</div>";
 
     const tabla = document.createElement("div");
     tabla.innerHTML = output;

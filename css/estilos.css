@@ -15,12 +15,13 @@ h1 {
 }
 h3 {
   font-size: 1.2rem;
+  margin: 20px 0px 10px 0px;
 }
 .column {
   display: flex;
   flex-direction: column;
   padding: 5px 20px;
-  width: 55%;
+  width: 60%;
   transition: all 3s;
   -webkit-transition: all 3s;
   -moz-transition: all 3s;
@@ -28,25 +29,51 @@ h3 {
   -o-transition: all 3s;
 }
 #resultado {
-  padding-top: 20px;
-  display: flex;
-  justify-content: center;
+  margin-top: 20px;
   color: white;
+  text-align: center;
+}
+.tabla {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  margin: 0px 25%;
 }
 .numero {
   color: #333b4c;
+  height: 25px;
 }
 .calcu {
   display: flex;
   justify-content: center;
   text-align: center;
+  /* margin-top: 10px; */
 }
+.total {
+  height: 50px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  overflow: hidden;
+  margin: 5px 2px;
+}
+.tipe {
+  height: 25px;
+  background-color: #333b4c;
+  padding-top: 5px;
+}
+
 input[type="radio"] {
   display: none;
 }
 label,
 label.type {
-  margin: 2px;
+  margin: 3px;
   display: inline-block;
   background-color: #333b4c;
   color: white;
