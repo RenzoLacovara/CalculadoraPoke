@@ -119,7 +119,8 @@ function calculo() {
     }
     output += "</tr><tr>";
     for (i = 0; i <= 17; i++) {
-      output += '<td class="' + color[i] + '">x' + resultado[i] + "</td>";
+      output +=
+        '<td class="' + color[i] + ' numero">x' + resultado[i] + "</td>";
     }
     output += "</tr></table>";
 
