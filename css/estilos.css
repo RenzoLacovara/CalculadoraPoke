@@ -28,6 +28,7 @@ h3 {
   -o-transition: all 3s;
 }
 #resultado {
+  padding-top: 20px;
   display: flex;
   justify-content: center;
   color: white;
@@ -157,50 +158,19 @@ h3 {
   padding: 5px 11px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-button {
-  border: none;
-  background-color: #558576;
-  color: white;
-  padding: 7px 14px;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
-  font-size: 18px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-button:hover {
-  background-color: #76cf9f;
-}
-.boton {
-  margin: 15px;
-  display: flex;
-  justify-content: center;
-}
-select {
-  min-width: 100px;
-}
 .output {
   text-align: center;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
   overflow: hidden;
 }
 .tbl_heading {
   font-weight: bold;
   background-color: #333b4c;
   color: #ffffff;
-}
-.table {
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
 }
 .inmune {
   background-color: #aaaaaa;
