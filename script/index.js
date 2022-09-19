@@ -93,36 +93,37 @@ function calculo() {
       if (tipos[i][tipo1] * tipos[i][tipo2] >= 2 && habilidad == 11) {
         resultado[i] = resultado[i] * 0.75;
       }
-      if (resultado[i] == 1) {
-        color[i] = "neutro";
-      }
-      if (resultado[i] < 1) {
-        color[i] = "resiste";
-      }
-      if (resultado[i] < 0.5) {
-        color[i] = "resiste2";
-      }
-      if (resultado[i] == 0) {
-        color[i] = "inmune";
-      }
-      if (resultado[i] > 1) {
-        color[i] = "debil";
-      }
-      if (resultado[i] > 2) {
-        color[i] = "debil2";
-      }
+      // if (resultado[i] == 1) {
+      //   color[i] = "neutro";
+      // }
+      // if (resultado[i] < 1) {
+      //   color[i] = "resiste";
+      // }
+      // if (resultado[i] < 0.5) {
+      //   color[i] = "resiste2";
+      // }
+      // if (resultado[i] == 0) {
+      //   color[i] = "inmune";
+      // }
+      // if (resultado[i] > 1) {
+      //   color[i] = "debil";
+      // }
+      // if (resultado[i] > 2) {
+      //   color[i] = "debil2";
+      // }
+      resultado[i] == 0
+        ? (color[i] = "inmune")
+        : resultado[i] < 0.5
+        ? (color[i] = "resiste2")
+        : resultado[i] > 2
+        ? (color[i] = "debil2")
+        : resultado[i] < 1
+        ? (color[i] = "resiste")
+        : resultado[i] > 1
+        ? (color[i] = "debil")
+        : (color[i] = "neutro");
     }
 
-    // output = '<table class="output" cellspacing="1" cellpadding="3"><tr>';
-    // for (i = 0; i <= 17; i++) {
-    //   output += '<td class="tbl_heading">' + nombre_tipo[i] + "</td>";
-    // }
-    // output += "</tr><tr>";
-    // for (i = 0; i <= 17; i++) {
-    //   output +=
-    //     '<td class="' + color[i] + ' numero">x' + resultado[i] + "</td>";
-    // }
-    // output += "</tr></table>";
     output = '<div class="tabla">';
     for (i = 0; i <= 17; i++) {
       output +=
