@@ -92,24 +92,6 @@ function calculo() {
       if (tipos[i][tipo1] * tipos[i][tipo2] >= 2 && habilidad == 11) {
         resultado[i] = resultado[i] * 0.75;
       }
-      // if (resultado[i] == 1) {
-      //   color[i] = "neutro";
-      // }
-      // if (resultado[i] < 1) {
-      //   color[i] = "resiste";
-      // }
-      // if (resultado[i] < 0.5) {
-      //   color[i] = "resiste2";
-      // }
-      // if (resultado[i] == 0) {
-      //   color[i] = "inmune";
-      // }
-      // if (resultado[i] > 1) {
-      //   color[i] = "debil";
-      // }
-      // if (resultado[i] > 2) {
-      //   color[i] = "debil2";
-      // }
       resultado[i] == 0
         ? (color[i] = "inmune")
         : resultado[i] < 0.5
@@ -136,37 +118,6 @@ function calculo() {
         "</h5></div></div>";
     }
     output += "</div>";
-    // let ctx = document.getElementById("myChart");
-    // let myChart = new Chart(ctx, {
-    //   type: "bar",
-
-    //   data: {
-    //     labels: nombre_tipo,
-
-    //     datasets: [
-    //       {
-    //         label: "efectividad",
-    //         data: resultado,
-
-    //         backgroundColor: "#76cf9f",
-    //         borderColor: "#76cf9f",
-    //         color: "#ffffff",
-    //         borderWidth: 1,
-    //       },
-    //     ],
-    //   },
-    //   options: {
-    //     layout: {
-    //       padding: 50,
-    //     },
-    //     scales: {
-    //       y: {
-    //         beginAtZero: true,
-    //       },
-    //     },
-    //   },
-    // });
-
     const tabla = document.createElement("div");
     tabla.classList.add("borde");
     tabla.innerHTML = output;
