@@ -38,8 +38,7 @@ var nombre_tipo = new Array(
   "Dragon",
   "Siniestro",
   "Acero",
-  "Hada",
-  "Nada"
+  "Hada"
 );
 
 var habilidades = new Array(
@@ -72,8 +71,8 @@ function calculo() {
   var tipo2 = document.querySelector('input[name="tipo2"]:checked').value;
   var habilidad = document.querySelector('input[name="hab"]:checked').value;
   var clima = document.querySelector('input[name="clima"]:checked').value;
-  var color = new Array();
-  var resultado = new Array();
+  var color = [];
+  var resultado = [];
   var output;
   var i;
 
@@ -123,7 +122,6 @@ function calculo() {
         ? (color[i] = "debil")
         : (color[i] = "neutro");
     }
-
     output = '<div class="tabla">';
     for (i = 0; i <= 17; i++) {
       output +=
@@ -138,8 +136,39 @@ function calculo() {
         "</h5></div></div>";
     }
     output += "</div>";
+    // let ctx = document.getElementById("myChart");
+    // let myChart = new Chart(ctx, {
+    //   type: "bar",
+
+    //   data: {
+    //     labels: nombre_tipo,
+
+    //     datasets: [
+    //       {
+    //         label: "efectividad",
+    //         data: resultado,
+
+    //         backgroundColor: "#76cf9f",
+    //         borderColor: "#76cf9f",
+    //         color: "#ffffff",
+    //         borderWidth: 1,
+    //       },
+    //     ],
+    //   },
+    //   options: {
+    //     layout: {
+    //       padding: 50,
+    //     },
+    //     scales: {
+    //       y: {
+    //         beginAtZero: true,
+    //       },
+    //     },
+    //   },
+    // });
 
     const tabla = document.createElement("div");
+    tabla.classList.add("borde");
     tabla.innerHTML = output;
     document.querySelector("#resultado").innerHTML = "";
     document.querySelector("#resultado").append(tabla);

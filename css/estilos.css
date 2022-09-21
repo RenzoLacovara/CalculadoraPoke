@@ -14,8 +14,8 @@ h1 {
   color: #76cf9f;
 }
 h3 {
-  font-size: 1.2rem;
-  margin: 20px 0px 10px 0px;
+  font-size: 1rem;
+  margin: 9px 0px 5px 0px;
 }
 .container {
   display: flex;
@@ -28,12 +28,19 @@ h3 {
   -ms-transition: all 3s;
   -o-transition: all 3s;
 }
+.borde {
+  background-color: white;
+  width: 100%;
+}
 #resultado {
-  margin-top: 20px;
   color: white;
+  height: 150px;
+  width: 100%;
   text-align: center;
+  background-color: white;
 }
 .tabla {
+  padding-top: 3px;
   display: flex;
   text-align: center;
   justify-content: space-evenly;
@@ -41,6 +48,7 @@ h3 {
   flex-wrap: wrap;
   padding-bottom: 10px;
   margin: 0px 25%;
+  background-color: white;
 }
 .numero {
   color: #333b4c;
@@ -61,6 +69,7 @@ h3 {
   -o-border-radius: 15px;
   overflow: hidden;
   margin: 5px 2px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .tipe {
   height: 25px;
@@ -226,5 +235,90 @@ h3 {
 @media only screen and (max-width: 600px) {
   .container {
     width: 90%;
+  }
+}
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 48px;
+}
+p {
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #333333;
+}
+
+.flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+  h1 {
+    font-size: 24px;
   }
 }
