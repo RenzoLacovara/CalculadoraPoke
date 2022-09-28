@@ -1,69 +1,70 @@
 var tipos = new Array(
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 1, 1, 0.5, 1, 1], // normal
-  [1, 0.5, 0.5, 1, 2, 2, 1, 1, 1, 1, 1, 2, 0.5, 1, 0.5, 1, 2, 1, 1], // fuego
-  [1, 2, 0.5, 1, 0.5, 1, 1, 1, 2, 1, 1, 1, 2, 1, 0.5, 1, 1, 1, 1], // agua
-  [1, 1, 2, 0.5, 0.5, 1, 1, 1, 0, 2, 1, 1, 1, 1, 0.5, 1, 1, 1, 1], // electrico
-  [1, 0.5, 2, 1, 0.5, 1, 1, 0.5, 2, 0.5, 1, 0.5, 2, 1, 0.5, 1, 0.5, 1, 1], // hierba
-  [1, 0.5, 0.5, 1, 2, 0.5, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 0.5, 1, 1], // hielo
-  [2, 1, 1, 1, 1, 2, 1, 0.5, 1, 0.5, 0.5, 0.5, 2, 0, 1, 2, 2, 0.5, 1], // lucha
-  [1, 1, 1, 1, 2, 1, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 1, 1, 0, 2, 1], // veneno
-  [1, 2, 1, 2, 0.5, 1, 1, 2, 1, 0, 1, 0.5, 2, 1, 1, 1, 2, 1, 1], // tierra
-  [1, 1, 1, 0.5, 2, 1, 2, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 0.5, 1, 1], // volador
-  [1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 0.5, 1, 1, 1, 1, 0, 0.5, 1, 1], // psiquico
-  [1, 0.5, 1, 1, 2, 1, 0.5, 0.5, 1, 0.5, 2, 1, 1, 0.5, 1, 2, 0.5, 0.5, 1], // bicho
-  [1, 2, 1, 1, 1, 2, 0.5, 1, 0.5, 2, 1, 2, 1, 1, 1, 1, 0.5, 1, 1], // roca
-  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 0.5, 1, 1, 1], // fantasma
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 0.5, 0, 1], // dragon
-  [1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 2, 1, 1, 2, 1, 0.5, 1, 0.5, 1], // siniestro
-  [1, 0.5, 0.5, 0.5, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0.5, 2, 1], // acero
-  [1, 0.5, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 2, 0.5, 1, 1], // hada
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] // Nada
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // Nada
+  [1, 1, 1, 1, 1, 1, 0.5, 1, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1], // normal
+  [1, 2, 1, 0.5, 0.5, 1, 2, 0.5, 0, 2, 1, 1, 1, 1, 0.5, 2, 1, 2, 0.5], // lucha
+  [1, 1, 2, 1, 1, 1, 0.5, 2, 1, 0.5, 1, 1, 2, 0.5, 1, 1, 1, 1, 1], // volador
+  [1, 1, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 0, 1, 1, 2, 1, 1, 1, 1, 1, 2], // veneno
+  [1, 1, 1, 0, 2, 1, 2, 0.5, 1, 2, 2, 1, 0.5, 2, 1, 1, 1, 1, 1], // tierra
+  [1, 1, 0.5, 2, 1, 0.5, 1, 2, 1, 0.5, 2, 1, 1, 1, 1, 2, 1, 1, 1], // roca
+  [1, 1, 0.5, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 0.5, 1, 2, 1, 2, 1, 1, 2, 0.5], // bicho
+  [1, 0, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 1], // fantasma
+  [1, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 1, 2, 1, 1, 2], // acero
+  [1, 1, 1, 1, 1, 1, 0.5, 2, 1, 2, 0.5, 0.5, 2, 1, 1, 2, 0.5, 1, 1], // fuego
+  [1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 0.5, 0.5, 1, 1, 1, 0.5, 1, 1], // agua
+  [1, 1, 1, 0.5, 0.5, 2, 2, 0.5, 1, 0.5, 0.5, 2, 0.5, 1, 1, 1, 0.5, 1, 1], // planta
+  [1, 1, 1, 2, 1, 0, 1, 1, 1, 1, 1, 2, 0.5, 0.5, 1, 1, 0.5, 1, 1], // electrico
+  [1, 1, 2, 1, 2, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 0.5, 1, 1, 0, 1], // psiquico
+  [1, 1, 1, 2, 1, 2, 1, 1, 1, 0.5, 0.5, 0.5, 2, 1, 1, 0.5, 2, 1, 1], // hielo
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 2, 1, 0], // dragon
+  [1, 1, 0.5, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 0.5], // siniestro
+  [1, 1, 2, 1, 0.5, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 2, 2, 1] // hada
 );
 
 var nombre_tipo = new Array(
+  "nada",
   "Normal",
-  "Fuego",
-  "Agua",
-  "Electrico",
-  "Hierba",
-  "Hielo",
   "Lucha",
+  "Volador",
   "Veneno",
   "Tierra",
-  "Volador",
-  "Psiquico",
-  "Bicho",
   "Roca",
+  "Bicho",
   "Fantasma",
+  "Acero",
+  "Fuego",
+  "Agua",
+  "Hierba",
+  "Electrico",
+  "Psiquico",
+  "Hielo",
   "Dragon",
   "Siniestro",
-  "Acero",
   "Hada"
 );
 
 var habilidades = new Array(
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // nada
-  [1, 0.5, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // sebo
-  [1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // ignifugo
-  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // levitacion
-  [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // absorbe electricidad
-  [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // absorbe agua
-  [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // absorbe fuego
-  [1, 1.25, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // piel seca
-  [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // herbivoro
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 0.5, 1, 1, 1], // sebo
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1], // ignifugo
+  [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // levitacion
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1], // absorbe electricidad
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1], // absorbe agua
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1], // absorbe fuego
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.25, 0, 1, 1, 1, 1, 1, 1, 1], // piel seca
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1], // herbivoro
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // filtro
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // superguarda
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // armadura prisma
-  [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // peluche
-  [1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] // pompa
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1], // peluche
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1] // pompa
 );
 var climas = new Array(
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // nada
-  [1, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // sequia
-  [1, 0.5, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], //lluvia
-  [1, 1.5, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // ocaso
-  [1, 0, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // albor
-  [1, 1, 1, 0.5, 1, 0.5, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1] // delta
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1], // sequia
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1.5, 1, 1, 1, 1, 1, 1, 1], //lluvia
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0, 1, 1, 1, 1, 1, 1, 1], // ocaso
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1.5, 1, 1, 1, 1, 1, 1, 1], // albor
+  [1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 0.5, 1, 0.5, 1, 1, 1] // delta
 );
 
 function calculo() {
@@ -129,23 +130,30 @@ function calculo() {
     function creaPoke(poke) {
       let type = poke;
       let pokemon = type.pokemon;
-      let i = Math.floor(Math.random() * 100);
+      let i = Math.floor(Math.random() * pokemon.length);
+      console.log(pokemon.length);
       let poke2 = pokemon[i];
       let poke3 = poke2.pokemon;
-      var output2;
-      console.log(poke3);
-      output2 = "<div>";
-      output2 +=
-        "<div class='total total2'><div class='tipe2'><h5>" +
-        type.name +
-        "</h5></div>";
-      output2 += "<div><h5>" + poke3.name + "</h5></div></div>";
-      output2 += "</div>";
-      const pok = document.createElement("div");
-      pok.classList.add("dvd");
-      pok.innerHTML = output2;
-      document.querySelector("#fetch").innerHTML = "";
-      document.querySelector("#fetch").append(pok);
+      let poke4 = poke3.url;
+      fetch(poke4)
+        .then((img) => img.json())
+        .then((foto) => getImg(foto));
+      function getImg(foto) {
+        let card1 = foto.sprites;
+        let card2 = card1.front_default;
+        var output2;
+        console.log(poke3);
+        output2 = "<div class='total2'>";
+        output2 += "<div class='tipe2'><h5>TIPO PRIMARIO</h5></div>";
+        output2 += "<img class= 'pokeimg' src='" + card2 + "'/>";
+        output2 += "<div><h5 class='nombrepoke'>" + poke3.name + "</h5></div>";
+        output2 += "</div>";
+        const pok = document.createElement("div");
+        pok.classList.add("dvd");
+        pok.innerHTML = output2;
+        document.querySelector("#fetch").innerHTML = "";
+        document.querySelector("#fetch").append(pok);
+      }
     }
     fetch("https://pokeapi.co/api/v2/type/" + tipo2)
       .then((data) => data.json())
@@ -155,23 +163,30 @@ function calculo() {
     function creaPoke2(poke) {
       let type = poke;
       let pokemon = type.pokemon;
-      let i = Math.floor(Math.random() * 100);
+      let i = Math.floor(Math.random() * pokemon.length);
+      console.log(pokemon.length);
       let poke2 = pokemon[i];
       let poke3 = poke2.pokemon;
-      var output3;
-      console.log(poke3);
-      output3 = "<div>";
-      output3 +=
-        "<div class='total total2'><div class='tipe2'><h5>" +
-        type.name +
-        "</h5></div>";
-      output3 += "<div><h5>" + poke3.name + "</h5></div></div>";
-      output3 += "</div>";
-      const pok2 = document.createElement("div");
-      pok2.classList.add("dvd");
-      pok2.innerHTML = output3;
-      document.querySelector("#fetch2").innerHTML = "";
-      document.querySelector("#fetch2").append(pok2);
+      let poke4 = poke3.url;
+      fetch(poke4)
+        .then((img) => img.json())
+        .then((foto) => getImg(foto));
+      function getImg(foto) {
+        let card1 = foto.sprites;
+        let card2 = card1.front_default;
+        var output3;
+        console.log(foto);
+        output3 = "<div class='total2'>";
+        output3 += "<div class='tipe2'><h5>TIPO SECUNDARIO</h5></div>";
+        output3 += "<img class= 'pokeimg' src='" + card2 + "'/>";
+        output3 += "<div><h5 class='nombrepoke'>" + poke3.name + "</h5></div>";
+        output3 += "</div>";
+        const pok2 = document.createElement("div");
+        pok2.classList.add("dvd");
+        pok2.innerHTML = output3;
+        document.querySelector("#fetch2").innerHTML = "";
+        document.querySelector("#fetch2").append(pok2);
+      }
     }
     const tabla = document.createElement("div");
     tabla.classList.add("borde");
