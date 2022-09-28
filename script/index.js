@@ -74,6 +74,8 @@ function calculo() {
   var color = [];
   var resultado = [];
   var output;
+  var output2;
+  var output3;
   var i;
 
   if (tipo1 != tipo2) {
@@ -118,6 +120,59 @@ function calculo() {
         "</h5></div></div>";
     }
     output += "</div>";
+
+    fetch("https://pokeapi.co/api/v2/type/" + tipo1)
+      .then((data) => data.json())
+      .then((poke) => {
+        creaPoke(poke);
+      });
+    function creaPoke(poke) {
+      let type = poke;
+      let pokemon = type.pokemon;
+      let i = Math.floor(Math.random() * 100);
+      let poke2 = pokemon[i];
+      let poke3 = poke2.pokemon;
+      var output2;
+      console.log(poke3);
+      output2 = "<div>";
+      output2 +=
+        "<div class='total total2'><div class='tipe2'><h5>" +
+        type.name +
+        "</h5></div>";
+      output2 += "<div><h5>" + poke3.name + "</h5></div></div>";
+      output2 += "</div>";
+      const pok = document.createElement("div");
+      pok.classList.add("dvd");
+      pok.innerHTML = output2;
+      document.querySelector("#fetch").innerHTML = "";
+      document.querySelector("#fetch").append(pok);
+    }
+    fetch("https://pokeapi.co/api/v2/type/" + tipo2)
+      .then((data) => data.json())
+      .then((poke) => {
+        creaPoke2(poke);
+      });
+    function creaPoke2(poke) {
+      let type = poke;
+      let pokemon = type.pokemon;
+      let i = Math.floor(Math.random() * 100);
+      let poke2 = pokemon[i];
+      let poke3 = poke2.pokemon;
+      var output3;
+      console.log(poke3);
+      output3 = "<div>";
+      output3 +=
+        "<div class='total total2'><div class='tipe2'><h5>" +
+        type.name +
+        "</h5></div>";
+      output3 += "<div><h5>" + poke3.name + "</h5></div></div>";
+      output3 += "</div>";
+      const pok2 = document.createElement("div");
+      pok2.classList.add("dvd");
+      pok2.innerHTML = output3;
+      document.querySelector("#fetch2").innerHTML = "";
+      document.querySelector("#fetch2").append(pok2);
+    }
     const tabla = document.createElement("div");
     tabla.classList.add("borde");
     tabla.innerHTML = output;

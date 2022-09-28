@@ -322,3 +322,19 @@ p {
     font-size: 24px;
   }
 }
+.random {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+#fetch,
+#fetch2 {
+  width: 40%;
+  margin: 0px 10%;
+  display: inline;
+  text-align: center;
+}
+.tipe2 h5 {
+  background-color: #76cf9f;
+  padding: 5px;
+}
