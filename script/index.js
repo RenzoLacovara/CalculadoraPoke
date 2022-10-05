@@ -230,17 +230,14 @@ function calculo() {
     var output2 = "";
     var output3 = "";
     const pok = document.createElement("div");
-    pok.classList.add("dvd");
     pok.innerHTML = output2;
     document.querySelector("#fetch").innerHTML = "";
     document.querySelector("#fetch").append(pok);
     const pok2 = document.createElement("div");
-    pok2.classList.add("dvd");
     pok2.innerHTML = output3;
     document.querySelector("#fetch2").innerHTML = "";
     document.querySelector("#fetch2").append(pok2);
     const tabla = document.createElement("div");
-    tabla.classList.add("borde");
     tabla.innerHTML = output;
     document.querySelector("#resultado").innerHTML = "";
     document.querySelector("#resultado").append(tabla);
