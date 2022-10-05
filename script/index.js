@@ -166,49 +166,59 @@ function calculo() {
         document.querySelector("#fetch").append(pok);
       }
     }
-    fetch("https://pokeapi.co/api/v2/type/" + tipo2)
-      .then((data) => data.json())
-      .then((poke) => {
-        creaPoke2(poke);
-      });
-    function creaPoke2(poke) {
-      let type = poke;
-      let pokemon = type.pokemon;
-      Toastify({
-        text: `Hay ${pokemon.length} pokemon del tipo ${poke.name}!`,
-        duration: 2000,
-        gravity: "bottom",
-        position: "right",
-        stopOnFocus: true,
-        style: {
-          background: "linear-gradient(to right, #505d78, #505d78)",
-          color: "white",
-        },
-      }).showToast();
-      let i = Math.floor(Math.random() * pokemon.length);
-      console.log(pokemon.length);
-      let poke2 = pokemon[i];
-      let poke3 = poke2.pokemon;
-      let poke4 = poke3.url;
-      fetch(poke4)
-        .then((img) => img.json())
-        .then((foto) => getImg(foto));
-      function getImg(foto) {
-        let card1 = foto.sprites;
-        let card2 = card1.front_default;
-        var output3;
-        console.log(foto);
-        output3 = "<div class='total2'>";
-        output3 += "<div class='tipe2'><h5>TIPO SECUNDARIO</h5></div>";
-        output3 += "<img class= 'pokeimg' src='" + card2 + "'/>";
-        output3 += "<div><h5 class='nombrepoke'>" + poke3.name + "</h5></div>";
-        output3 += "</div>";
-        const pok2 = document.createElement("div");
-        pok2.classList.add("dvd");
-        pok2.innerHTML = output3;
-        document.querySelector("#fetch2").innerHTML = "";
-        document.querySelector("#fetch2").append(pok2);
+    if (tipo2 != "0") {
+      fetch("https://pokeapi.co/api/v2/type/" + tipo2)
+        .then((data) => data.json())
+        .then((poke) => {
+          creaPoke2(poke);
+        });
+      function creaPoke2(poke) {
+        let type = poke;
+        let pokemon = type.pokemon;
+        Toastify({
+          text: `Hay ${pokemon.length} pokemon del tipo ${poke.name}!`,
+          duration: 2000,
+          gravity: "bottom",
+          position: "right",
+          stopOnFocus: true,
+          style: {
+            background: "linear-gradient(to right, #505d78, #505d78)",
+            color: "white",
+          },
+        }).showToast();
+        let i = Math.floor(Math.random() * pokemon.length);
+        console.log(pokemon.length);
+        let poke2 = pokemon[i];
+        let poke3 = poke2.pokemon;
+        let poke4 = poke3.url;
+        fetch(poke4)
+          .then((img) => img.json())
+          .then((foto) => getImg(foto));
+        function getImg(foto) {
+          let card1 = foto.sprites;
+          let card2 = card1.front_default;
+          var output3;
+          console.log(foto);
+          output3 = "<div class='total2'>";
+          output3 += "<div class='tipe2'><h5>TIPO SECUNDARIO</h5></div>";
+          output3 += "<img class= 'pokeimg' src='" + card2 + "'/>";
+          output3 +=
+            "<div><h5 class='nombrepoke'>" + poke3.name + "</h5></div>";
+          output3 += "</div>";
+          const pok2 = document.createElement("div");
+          pok2.classList.add("dvd");
+          pok2.innerHTML = output3;
+          document.querySelector("#fetch2").innerHTML = "";
+          document.querySelector("#fetch2").append(pok2);
+        }
       }
+    } else {
+      var output3 = "";
+      const pok2 = document.createElement("div");
+      pok2.classList.add("dvd");
+      pok2.innerHTML = output3;
+      document.querySelector("#fetch2").innerHTML = "";
+      document.querySelector("#fetch2").append(pok2);
     }
     const tabla = document.createElement("div");
     tabla.classList.add("borde");
@@ -216,11 +226,29 @@ function calculo() {
     document.querySelector("#resultado").innerHTML = "";
     document.querySelector("#resultado").append(tabla);
   } else {
+    var output = "";
+    var output2 = "";
+    var output3 = "";
+    const pok = document.createElement("div");
+    pok.classList.add("dvd");
+    pok.innerHTML = output2;
+    document.querySelector("#fetch").innerHTML = "";
+    document.querySelector("#fetch").append(pok);
+    const pok2 = document.createElement("div");
+    pok2.classList.add("dvd");
+    pok2.innerHTML = output3;
+    document.querySelector("#fetch2").innerHTML = "";
+    document.querySelector("#fetch2").append(pok2);
+    const tabla = document.createElement("div");
+    tabla.classList.add("borde");
+    tabla.innerHTML = output;
+    document.querySelector("#resultado").innerHTML = "";
+    document.querySelector("#resultado").append(tabla);
     Toastify({
       text: "Tipo Primario y Secundario tienen que ser distintos!",
-      duration: 2000,
+      duration: 3000,
       close: true,
-      gravity: "top",
+      gravity: "bottom",
       position: "center",
       stopOnFocus: true,
       style: {
