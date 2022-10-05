@@ -131,19 +131,15 @@ function calculo() {
       let type = poke;
       let pokemon = type.pokemon;
       Toastify({
-        text: `Hay ${pokemon.length} pokemon del tipo ${poke.name}`,
+        text: `Hay ${pokemon.length} pokemon del tipo ${poke.name}!`,
         duration: 2000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-
-        gravity: "bottom", // `top` or `bottom`
-        position: "left", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "bottom",
+        position: "left",
+        stopOnFocus: true,
         style: {
           background: "linear-gradient(to right, #505d78, #505d78)",
           color: "white",
         },
-        onClick: function () {}, // Callback after click
       }).showToast();
       let i = Math.floor(Math.random() * pokemon.length);
       console.log(pokemon.length);
@@ -179,19 +175,15 @@ function calculo() {
       let type = poke;
       let pokemon = type.pokemon;
       Toastify({
-        text: `Hay ${pokemon.length} pokemon del tipo ${poke.name}`,
+        text: `Hay ${pokemon.length} pokemon del tipo ${poke.name}!`,
         duration: 2000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-
-        gravity: "bottom", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: true,
         style: {
           background: "linear-gradient(to right, #505d78, #505d78)",
           color: "white",
         },
-        onClick: function () {}, // Callback after click
       }).showToast();
       let i = Math.floor(Math.random() * pokemon.length);
       console.log(pokemon.length);
@@ -227,16 +219,13 @@ function calculo() {
     Toastify({
       text: "Tipo Primario y Secundario tienen que ser distintos!",
       duration: 2000,
-      destination: "https://github.com/apvarun/toastify-js",
-      newWindow: true,
       close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "center", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
+      gravity: "top",
+      position: "center",
+      stopOnFocus: true,
       style: {
         background: "linear-gradient(to right, #76cf9f, #76cf9f)",
       },
-      onClick: function () {}, // Callback after click
     }).showToast();
   }
 }
