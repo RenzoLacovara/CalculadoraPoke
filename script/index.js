@@ -130,6 +130,21 @@ function calculo() {
     function creaPoke(poke) {
       let type = poke;
       let pokemon = type.pokemon;
+      Toastify({
+        text: `Hay ${pokemon.length} pokemon del tipo ${poke.name}`,
+        duration: 2000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+
+        gravity: "bottom", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #505d78, #505d78)",
+          color: "white",
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast();
       let i = Math.floor(Math.random() * pokemon.length);
       console.log(pokemon.length);
       let poke2 = pokemon[i];
@@ -163,6 +178,21 @@ function calculo() {
     function creaPoke2(poke) {
       let type = poke;
       let pokemon = type.pokemon;
+      Toastify({
+        text: `Hay ${pokemon.length} pokemon del tipo ${poke.name}`,
+        duration: 2000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #505d78, #505d78)",
+          color: "white",
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast();
       let i = Math.floor(Math.random() * pokemon.length);
       console.log(pokemon.length);
       let poke2 = pokemon[i];
@@ -194,9 +224,19 @@ function calculo() {
     document.querySelector("#resultado").innerHTML = "";
     document.querySelector("#resultado").append(tabla);
   } else {
-    document.querySelector("#resultado").innerHTML = "";
-    document
-      .querySelector("#resultado")
-      .append("Tipo Primario y Secundario tienen que ser distintos!");
+    Toastify({
+      text: "Tipo Primario y Secundario tienen que ser distintos!",
+      duration: 2000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "center", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #76cf9f, #76cf9f)",
+      },
+      onClick: function () {}, // Callback after click
+    }).showToast();
   }
 }
