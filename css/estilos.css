@@ -37,11 +37,12 @@ h3 {
   width: 100%;
 }
 #resultado {
-  color: white;
+  color: #505d78;
   height: 150px;
   width: 100%;
   text-align: center;
   background-color: white;
+  padding-top: 2px;
 }
 .tabla {
   padding-top: 3px;
@@ -80,6 +81,7 @@ h3 {
   height: 25px;
   background-color: #333b4c;
   padding-top: 5px;
+  color: white;
 }
 
 input[type="radio"] {
