@@ -142,7 +142,6 @@ function calculo() {
         },
       }).showToast();
       let i = Math.floor(Math.random() * pokemon.length);
-      console.log(pokemon.length);
       let poke2 = pokemon[i];
       let poke3 = poke2.pokemon;
       let poke4 = poke3.url;
@@ -153,7 +152,6 @@ function calculo() {
         let card1 = foto.sprites;
         let card2 = card1.front_default;
         var output2;
-        console.log(poke3);
         output2 = "<div class='total2'>";
         output2 += "<div class='tipe2'><h5>TIPO PRIMARIO</h5></div>";
         output2 += "<img class= 'pokeimg' src='" + card2 + "'/>";
@@ -187,7 +185,6 @@ function calculo() {
           },
         }).showToast();
         let i = Math.floor(Math.random() * pokemon.length);
-        console.log(pokemon.length);
         let poke2 = pokemon[i];
         let poke3 = poke2.pokemon;
         let poke4 = poke3.url;
@@ -198,7 +195,6 @@ function calculo() {
           let card1 = foto.sprites;
           let card2 = card1.front_default;
           var output3;
-          console.log(foto);
           output3 = "<div class='total2'>";
           output3 += "<div class='tipe2'><h5>TIPO SECUNDARIO</h5></div>";
           output3 += "<img class= 'pokeimg' src='" + card2 + "'/>";
