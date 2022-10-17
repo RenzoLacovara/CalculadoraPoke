@@ -78,7 +78,13 @@ function calculo() {
   var output2;
   var output3;
   var i;
-
+  var fetchdiv = document.querySelector("#fetch");
+  var fetchdiv2 = document.querySelector("#fetch2");
+  var resdiv = document.querySelector("#resultado");
+  function createDiv() {
+    document.createElement("div");
+    return document.createElement("div");
+  }
   if (tipo1 != tipo2) {
     for (i = 0; i <= 18; i++) {
       resultado[i] =
@@ -157,11 +163,11 @@ function calculo() {
         output2 += "<img class= 'pokeimg' src='" + card2 + "'/>";
         output2 += "<div><h5 class='nombrepoke'>" + poke3.name + "</h5></div>";
         output2 += "</div>";
-        const pok = document.createElement("div");
+        const pok = createDiv();
         pok.classList.add("dvd");
         pok.innerHTML = output2;
-        document.querySelector("#fetch").innerHTML = "";
-        document.querySelector("#fetch").append(pok);
+        fetchdiv.innerHTML = "";
+        fetchdiv.append(pok);
       }
     }
     if (tipo2 != "0") {
@@ -201,42 +207,42 @@ function calculo() {
           output3 +=
             "<div><h5 class='nombrepoke'>" + poke3.name + "</h5></div>";
           output3 += "</div>";
-          const pok2 = document.createElement("div");
+          const pok2 = createDiv();
           pok2.classList.add("dvd");
           pok2.innerHTML = output3;
-          document.querySelector("#fetch2").innerHTML = "";
-          document.querySelector("#fetch2").append(pok2);
+          fetchdiv2.innerHTML = "";
+          fetchdiv2.append(pok2);
         }
       }
     } else {
       var output3 = "";
-      const pok2 = document.createElement("div");
+      const pok2 = createDiv();
       pok2.classList.add("dvd");
       pok2.innerHTML = output3;
-      document.querySelector("#fetch2").innerHTML = "";
-      document.querySelector("#fetch2").append(pok2);
+      fetchdiv2.innerHTML = "";
+      fetchdiv2.append(pok2);
     }
-    const tabla = document.createElement("div");
+    const tabla = createDiv();
     tabla.classList.add("borde");
     tabla.innerHTML = output;
-    document.querySelector("#resultado").innerHTML = "";
-    document.querySelector("#resultado").append(tabla);
+    resdiv.innerHTML = "";
+    resdiv.append(tabla);
   } else {
     var output = "";
     var output2 = "";
     var output3 = "";
-    const pok = document.createElement("div");
+    const pok = createDiv();
     pok.innerHTML = output2;
-    document.querySelector("#fetch").innerHTML = "";
-    document.querySelector("#fetch").append(pok);
-    const pok2 = document.createElement("div");
+    fetchdiv.innerHTML = "";
+    fetchdiv.append(pok);
+    const pok2 = createDiv();
     pok2.innerHTML = output3;
-    document.querySelector("#fetch2").innerHTML = "";
-    document.querySelector("#fetch2").append(pok2);
-    const tabla = document.createElement("div");
+    fetchdiv2.innerHTML = "";
+    fetchdiv2.append(pok2);
+    const tabla = createDiv();
     tabla.innerHTML = output;
-    document.querySelector("#resultado").innerHTML = "";
-    document.querySelector("#resultado").append(tabla);
+    resdiv.innerHTML = "";
+    resdiv.append(tabla);
     Toastify({
       text: "Tipo Primario y Secundario tienen que ser distintos!",
       duration: 3000,
